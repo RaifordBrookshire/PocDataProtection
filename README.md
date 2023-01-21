@@ -22,7 +22,8 @@ Here is an example of how to use the class:
 
 ```c#
 const string appName = "Default App";
-const string protectorName = "Test Protector";			string plainText = "My Secret in Plain Text";
+const string protectorName = "Test Protector";
+string plainText = "My Secret in Plain Text";
 
 // Create protected string and also unprotect to read back	
 var protector = new ProtectedString(appName, protectorName);
