@@ -8,6 +8,7 @@ namespace PocDataProtection
 		{
 			UseDataProtectionNative();
 			UseDataProtectionWrapper();
+			UseDataProtectionWrapperNoComments();
 
 			WriteLine("Hit any key..."); 
 			Console.ReadLine();
@@ -39,6 +40,19 @@ namespace PocDataProtection
 			// Finally Wipe the memory of the secret once your done using it.
 			protector.WipeStringMemory(ref secret);
 			WriteLine($"Secret has been wiped 'secret': {secret} (this should be empty)");
+		}
+
+		private static void UseDataProtectionWrapperNoComments()
+		{			
+			const string appName = "Default App";
+			const string protectorName = "Test Protector";
+			string plainText = "My Secret in Plain Text";
+			
+			var protector = new ProtectedString(appName, protectorName);
+			var cipherText = protector.Protect(ref plainText);
+			string secret = protector.Unprotect();
+			protector.WipeStringMemory(ref secret);
+			
 		}
 
 		private static void UseDataProtectionNative()
