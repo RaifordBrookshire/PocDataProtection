@@ -10,7 +10,7 @@ It is important to not store secret data, such as passwords or sensitive informa
 1. Clone the repository to your local machine.
 2. Open the solution in Visual Studio.
 3. Build and run the project.
-4. You will see concole output with progress
+4. You will see console output with progress
 
 ## Using the Wrapper Class
 
